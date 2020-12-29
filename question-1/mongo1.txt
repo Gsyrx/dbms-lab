@@ -1,0 +1,19 @@
+// to create employee table
+
+db.createCollection("employee")
+
+// inserting values
+db.employee.insert({"ssn":1,"name":"Gaurav","depno":"d1","projectNo":101})
+db.employee.insert({"ssn":2,"name":"Akshat","depno":"d2","projectNo":102})
+db.employee.insert({"ssn":3,"name":"Aaryan","depno":"d3","projectNo":102})
+db.employee.insert({"ssn":4,"name":"Aman","depno":"d2","projectNo":102})
+db.employee.insert({"ssn":5,"name":"Sounak","depno":"d3","projectNo":103})
+
+// to get all employee
+db.employee.find().pretty()
+
+// employee working for depno -> 2 
+db.employee.find({"depno":"d2"}).pretty()
+
+// employee working on project -> 101
+db.employee.find({"projectNo":101}).pretty()

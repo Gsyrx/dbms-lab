@@ -41,3 +41,12 @@ group by depno;
 
 update workson set pno = 'P2'
 where ssn = 'E1';
+
+
+begin
+update employee
+set salary = salary + (0.15 * salary)
+where depno = 1;
+dbms_output.put_line('Number of employee whose salary was incremented ' || SQL % ROWCOUNT);
+end;
+/
