@@ -1,0 +1,20 @@
+// to create port table
+db.createCollection("port")
+
+// inserting values
+db.port.insert({"bid":1,"bname":"B1","colour":"black","sid":1,"sname":"S1","day":"Monday"})
+db.port.insert({"bid":2,"bname":"B2","colour":"blue","sid":2,"sname":"S2","day":"Tuesday"})
+db.port.insert({"bid":3,"bname":"B3","colour":"blue","sid":3,"sname":"S3","day":"Wednesday"})
+db.port.insert({"bid":4,"bname":"B4","colour":"red","sid":4,"sname":"S4","day":"Thursday"})
+db.port.insert({"bid":5,"bname":"B5","colour":"yellow","sid":5,"sname":"S5","day":"Friday"})
+db.port.insert({"bid":6,"bname":"B6","colour":"yellow","sid":6,"sname":"S6","day":"Saturday"})
+db.port.insert({"bid":7,"bname":"B7","colour":"red","sid":7,"sname":"S7","day":"Sunday"})
+
+// to get all ports
+db.port.find().pretty()
+
+// to get data of sname -> S2
+db.port.find({"sname":"S2"}).pretty()
+
+// to get data of colour -> blue
+db.port.find({"colour":"blue"}).pretty()
