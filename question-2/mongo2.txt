@@ -1,0 +1,16 @@
+// to create warehouse table
+db.createCollection("warehouse")
+
+// inserting values
+db.warehouse.insert({"pid":1,"pname":"cord","sid":1,"sname":"mi"})
+db.warehouse.insert({"pid":2,"pname":"cable","sid":2,"sname":"oppo"})
+db.warehouse.insert({"pid":3,"pname":"nut","sid":3,"sname":"redmi"})
+
+// to get all warehouse
+db.warehouse.find().pretty()
+
+// update pid -> 3 to pid -> 4
+db.warehouse.update({"pid":3},{$set: {"pid":4}})
+
+// to get data of pid -> 1
+db.warehouse.find({"pid":1}).pretty()

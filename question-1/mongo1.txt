@@ -1,5 +1,4 @@
 // to create employee table
-
 db.createCollection("employee")
 
 // inserting values
