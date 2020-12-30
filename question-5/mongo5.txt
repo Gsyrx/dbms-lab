@@ -1,0 +1,12 @@
+// to create library table
+db.createCollection("library")
+
+// inserting values
+db.library.insert({"usn":"is031","name":"Gaurav","isbn":1,"title":"T1"})
+db.library.insert({"usn":"is002","name":"Aaryan","isbn":2,"title":"T2"})
+db.library.insert({"usn":"is031","name":"Gaurav","isbn":3,"title":"T3"})
+
+// to get name of student who borrowed book 2
+db.library.find({"isbn":2},{"name":1,_id:0}).pretty()
+
+db.library.find({"title":"T1"},{"name":1,_id:0}).pretty()
