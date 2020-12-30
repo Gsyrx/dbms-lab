@@ -36,6 +36,11 @@ where usn = (
     where isbn = 1
 );
 
+< -- or -- >
+select name_student from student
+join borrow on borrow.usn = student.usn
+where isbn = 1;
+
 select name_student from student
 where usn = (
     select usn from borrow
