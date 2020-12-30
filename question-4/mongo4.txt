@@ -1,0 +1,12 @@
+// to create shipment table
+db.createCollection("shipment")
+
+// inserting data
+db.shipment.insert({"pno":1,"pname":"P1","wno":1,"wname":"W1","quantity":10})
+db.shipment.insert({"pno":2,"pname":"P2","wno":2,"wname":"W2","quantity":20})
+db.shipment.insert({"pno":2,"pname":"P3","wno":3,"wname":"W3","quantity":20})
+db.shipment.insert({"pno":2,"pname":"P4","wno":4,"wname":"W4","quantity":30})
+
+db.shipment.find({"wname":"W2"}).pretty()
+
+db.shipment.aggregate([{$group:{_id:"$wname",total:{$sum: "$quantity"}}}])
