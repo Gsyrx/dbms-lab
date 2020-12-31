@@ -59,7 +59,7 @@ from shipment
 group by wno;
 
 select * from warehouse
-join shipment on warehouse.wno = shipment.wno
+join shipment on shipment.wno = warehouse.wno
 where quantity in (
     select max(quantity)
     from shipment

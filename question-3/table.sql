@@ -52,6 +52,12 @@ where bid in (
     where sailor.sname = 'S2'
 );
 
+< -- or -- >
+
+select bid from reserves
+join sailor on sailor.s_id = reserves.s_id
+where sname = 'S2';
+
 select b.bid from boat b 
 where not exists (
     select s.s_id from sailor s
