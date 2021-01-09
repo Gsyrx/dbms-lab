@@ -44,6 +44,7 @@ where wno in (
     where part.colour = 'red'
 );
 
+
 select p.pno from part p 
 where not exists (
     select w.wno from warehouse w
@@ -61,6 +62,14 @@ group by wno;
 select * from warehouse
 join shipment on shipment.wno = warehouse.wno
 where quantity in (
+    select max(quantity)
+    from shipment
+);
+
+<-- or -->
+select * from warehouse
+join shipment on shipment.wno = warehouse.wno
+where quantity = (
     select max(quantity)
     from shipment
 );
