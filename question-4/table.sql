@@ -38,7 +38,7 @@ insert into shipment values(3,4,300,'MAR-20-2020');
 
 
 select wname from warehouse
-where wno = (
+where wno in (
     select wno from shipment
     join part on part.pno = shipment.pno
     where part.colour = 'red'
