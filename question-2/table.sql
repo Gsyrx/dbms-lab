@@ -36,7 +36,7 @@ join supplier on supplier.s_id = supply.s_id
 where sname = 'oppo';
 
 select sname from supplier
-where s_id = (
+where s_id in (
     select s_id from supply
     join parts on parts.pid = supply.pid
     where pname = 'wire'
