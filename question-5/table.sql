@@ -29,7 +29,7 @@ insert into borrow values(1,'IS031','DEC-12-2020');
 insert into borrow values(2,'IS002','DEC-15-2020');
 insert into borrow values(3,'IS031','DEC-20-2020');
 insert into borrow values(1,'IS002','DEC-12-2020');
-
+insert into borrow values(2,'IS031','DEC-15-2020');
 
 
 select name_student from student
@@ -44,7 +44,7 @@ join borrow on borrow.usn = student.usn
 where isbn = 1;
 
 select name_student from student
-where usn = (
+where usn in (
     select usn from borrow
     join book on book.isbn = borrow.isbn
     where book.title = 'database'
