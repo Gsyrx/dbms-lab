@@ -30,6 +30,7 @@ insert into supply values(2,1,20);
 insert into supply values(3,1,40);
 insert into supply values(4,2,20);
 insert into supply values(1,3,20);
+insert into supply values(2,3,20);
 
 select pid from supply
 join supplier on supplier.s_id = supply.s_id
