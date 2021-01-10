@@ -9,4 +9,4 @@ db.shipment.insert({"pno":2,"pname":"P4","wno":4,"wname":"W4","quantity":30})
 
 db.shipment.find({"wname":"W2"}).pretty()
 
-db.shipment.aggregate([{$group:{_id:"$wname",total:{$sum: "$quantity"}}}])
+db.shipment.aggregate([{$group:{_id:"$wno",total:{$sum: "$quantity"}}}])
