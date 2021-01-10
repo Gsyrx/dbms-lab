@@ -97,3 +97,26 @@ close curr;
 dbms_output.put_line(counter||'rows inserted into the table copy_part1');
 end;
 /
+
+-- palindrome --
+DECLARE
+   n number;
+   m number;
+   temp number:=0;
+   rem number;
+BEGIN
+   n :=12321;
+   m :=n;
+   while n>0
+   loop
+      rem := mod(n,10);
+      temp := (temp*10)+rem;
+      n := trunc(n/10);
+   end loop;
+   if m = temp
+   then
+      dbms_output.put_line('Palindrome');
+   else
+      dbms_output.put_line('Not Palindrome');
+   end if;
+end;

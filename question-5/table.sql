@@ -80,7 +80,7 @@ end;
 /
 
 
--- or --
+-- fibonacci --
 
 declare
 a number := 0;
@@ -100,3 +100,26 @@ begin
       dbms_output.put_line(temp);
    end loop;
 end;
+
+-- factorial --
+
+declare
+
+num number := 5;			 
+fact number := 1;			 
+temp number;		 
+
+begin
+
+temp :=num; 
+
+while( temp>0 )			 
+loop 
+fact := fact*temp; 
+temp := temp-1; 
+
+end loop; 
+
+dbms_output.put_line('factorial of '|| num || ' is ' || fact); 
+
+end; 
